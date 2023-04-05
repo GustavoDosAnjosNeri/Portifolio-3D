@@ -12,16 +12,19 @@ const Map = () => {
     <ComposableMap
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [-10.0, -52.0, 0],
+        rotate: [58.0, 12.0, 0],
         center: [-5, -3],
-        scale: 1100
+        scale: 1200
       }}
+
+      style={{width: "100%", height: "100%", paddingTop: "1px"}}
+
     >
       <Geographies
         geography="/features.json"
-        fill="#D6D6DA"
+        fill="#26003f"
         stroke="#FFFFFF"
-        strokeWidth={0.5}
+        strokeWidth={1}
       >
         {({ geographies }) =>
           geographies.map((geo) => (
@@ -29,18 +32,19 @@ const Map = () => {
           ))
         }
       </Geographies>
+
       <Annotation
-        subject={[2.3522, 48.8566]}
+        subject={[-61.90190288860727, -11.167406406017548]}
         dx={-90}
         dy={-30}
         connectorProps={{
-          stroke: "#FF5533",
+          stroke: "#ffffff",
           strokeWidth: 3,
           strokeLinecap: "round"
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
-          {"Paris"}
+        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#ffffff">
+          {"Presidente Médici"}
         </text>
       </Annotation>
     </ComposableMap>
