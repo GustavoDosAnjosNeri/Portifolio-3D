@@ -2,15 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.div`
+    height: 10vh;
     display: flex;
     justify-content: center;
+    scroll-snap-align: center;
 `
 
 const Container = styled.div`
-    width: 1200px;
+    width: 1400px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 15px 30px;
 `
 
 const Links = styled.div`
@@ -56,7 +58,7 @@ const Navbar = () => {
     <Section>
         <Container>
         <Links>
-            <Logo src="./img/logo.png"/>
+            <Logo alt="Logo" src="./img/logo.png"/>
             <List>
                 <ListItem>Home</ListItem>
                 <ListItem>Studio</ListItem>
@@ -65,7 +67,7 @@ const Navbar = () => {
             </List>
         </Links>
         <Icons>
-            <Icon src="./img/search.png"/>
+            <Icon alt="buscar" src="./img/search.png"/>
             <Button>Hire Now</Button>
         </Icons>
         </Container>

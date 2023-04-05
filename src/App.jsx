@@ -15,7 +15,8 @@ const Container = styled.div`
   }
   color: white;
   background: url("./img/bg.jpeg");
-`
+`;
+
 function App() {
 
   return (
