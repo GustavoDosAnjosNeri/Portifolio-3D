@@ -22,7 +22,7 @@ const Map = () => {
     >
       <Geographies
         geography="/features.json"
-        fill="#26003f"
+        fill="transparent"
         stroke="#FFFFFF"
         strokeWidth={1}
       >
@@ -35,15 +35,15 @@ const Map = () => {
 
       <Annotation
         subject={[-61.90190288860727, -11.167406406017548]}
-        dx={-90}
-        dy={-30}
+        dx={-80}
+        dy={-60}
         connectorProps={{
           stroke: "#ffffff",
           strokeWidth: 3,
           strokeLinecap: "round"
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#ffffff">
+        <text x="-200" y="-0" textAnchor="start" fontSize="24px" alignmentBaseline="middle" fill="#ffffff">
           {"Presidente Médici"}
         </text>
       </Annotation>

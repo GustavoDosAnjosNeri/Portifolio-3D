@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 import styled from 'styled-components';
 import Map from "./Map"
+
 
 const Section = styled.div`
   height: 100vh;
@@ -61,24 +64,54 @@ const Right = styled.div`
 `
 
 const Contact = () => {
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_0uqrrgc",
+        "template_fntu9qz",
+        ref.current,
+        "duqJKXZRK70Apl7IW"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
   return (
     <Section>
       <Container>
         <Left>
-          <Form>
-            <Title>Fale com a gente!</Title>
-            <Input placeholder="Nome"></Input>
-            <Input placeholder="Email"></Input>
-            <TextArea placeholder="Escreva sua mensagem" rows={10}></TextArea>
-            <Button>Enviar</Button>
+          <Form ref={ref} onSubmit={handleSubmit}>
+            <Title>Contact Us</Title>
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" name="email" />
+            <TextArea
+              placeholder="Escreva sua mensagem."
+              name="message"
+              rows={10}
+            />
+            <Button type="submit">Send</Button>
+            {success &&
+              "Sua mensagem foi enviada, em breve iremos responder  :)"}
           </Form>
         </Left>
         <Right>
-          <Map/>
+          <Map />
         </Right>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
