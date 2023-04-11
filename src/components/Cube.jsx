@@ -16,7 +16,7 @@ const Cube = () => {
             position={[0, 0, 5]}
             />
             <color attach="background" args={[0xF29DBA]}/>
-            {/*Para utilizar cores Hexadecimais no Three.js, ]
+            {/*Para utilizar cores Hexadecimais no Three.js, 
             precisamos substituir o "#" por "0x" antes de inserir o codigo da cor
             Para usar o RGB bsta utilizar 'rgb( 0.5, 0.5, 0.5 )'*/}
            
