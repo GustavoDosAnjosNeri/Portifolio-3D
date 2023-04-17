@@ -1,8 +1,14 @@
+import { OrbitControls, Stage } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import React from 'react'
+import Cadeira from './Cadeira'
 
 const WebDesign = () => {
   return (
-    <div>WebDesign</div>
+    <Canvas>
+    <Cadeira/>
+    <OrbitControls enableZoom={false} autoRotate />
+  </Canvas>
   )
 }
 
