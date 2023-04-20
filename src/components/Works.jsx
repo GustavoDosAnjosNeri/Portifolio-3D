@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Development from "./Development";
-import ProductDesign from "./ProductDesign";
 import WebDesign from "./WebDesign";
-
+import Development from "./Development";
+import Ilustration from "./Ilustration";
+import ProductDesign from "./ProductDesign";
+import SocialMedia from "./SocialMedia";
 
 const data = [
   "Web Design",
   "Development",
-  "Ilutration",
+  "Ilustration",
   "Product Design",
   "Social Media",
 ];
@@ -93,8 +94,12 @@ const Works = () => {
             <WebDesign />
           ) : work === "Development" ? (
             <Development />
-          ) : (
+          ) : work === "Ilustration" ? (
+            <Ilustration />
+          ) : work === "Product Design" ? (
             <ProductDesign />
+          ) : (
+            <SocialMedia/>
           )}
         </Right>
       </Container>
